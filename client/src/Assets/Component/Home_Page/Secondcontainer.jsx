@@ -33,7 +33,7 @@ const Secondcontainer = ({ Header, Header_summary, Header_url, Direaction, Heade
       {/* Image */}
       <Box
         component="img"
-        src="public/model/Aimg1.jpg"
+        src="/model/Aimg1.jpg"
         alt="Image 1"
         sx={{
           // border:"10px solid black",
