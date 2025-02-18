@@ -54,8 +54,8 @@ const Video_Input_Section = ({ handleChange, handleSubmit, sliderValues, sliderL
             )}
 
             {sliderValues && Object.keys(sliderValues).map((key) => (
-                <Box key={key} sx={{ marginBottom: '20px', textAlign: 'left',  lineHeight:"0.1px" }}>
-                    <Typography sx={{textTransform:"upperCase", color: Theme.white[100], fontSize: '16px', fontWeight: 'bold', marginBottom: '5px', }}>
+                <Box key={key} sx={{ marginBottom: '20px', textAlign: 'left',  lineHeight:"0.1px", marginTop:"5px" }}>
+                    <Typography sx={{textTransform:"upperCase", color: "lightgray",lineHeight:1, fontSize: '16px', fontWeight: 'bold', marginBottom: '5px', }}>
                         {key}: {sliderValues[key]}
                     </Typography>
                     <Slider

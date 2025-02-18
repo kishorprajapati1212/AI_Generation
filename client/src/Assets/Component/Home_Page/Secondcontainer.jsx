@@ -18,9 +18,9 @@ const Secondcontainer = ({ Header, Header_summary, Header_url, Direaction, Heade
     <Box
       ref={ref}
       sx={{
-        // backgroundColor: 'black',
+        backgroundColor: 'black',
         padding:'50px',
-        margin:'100px 0',
+        margin:'20px 0',
         width: '100%',
         // padding: '20px',
         height: '60vh',
@@ -42,7 +42,7 @@ const Secondcontainer = ({ Header, Header_summary, Header_url, Direaction, Heade
           objectFit: 'cover',
           borderRadius:'20px',
           opacity: inView ? 1 : 0,
-          transform: inView ? 'translateX(0)' : `translateX(${show ? '20%' : '-10%'})`,
+          transform: inView ? 'scale(1)' : `scale(${show ? '30%' : '0%'})`,
           transition: 'opacity 0.5s ease, transform 0.5s ease',
         }}
       />
@@ -57,7 +57,7 @@ const Secondcontainer = ({ Header, Header_summary, Header_url, Direaction, Heade
           alignItems: 'center',
           justifyContent: 'center',
           opacity: inView ? 1 : 0,
-          transition: 'opacity 0.5s ease',
+          transition: 'opacity 2s ease',
           // border:"10px solid black"
         }}
       >

@@ -6,7 +6,7 @@ const Firstcontainer = ({ Heightsize }) => {
     <Box sx={{ color: "white", position: "relative", height: '90vh', overflow: 'hidden' }}>
       <Grid container>
         <Grid item xs={12}>
-          <video autoPlay loop muted style={{ /*height: Heightsize*/ height: '100%', width: "100%", objectFit: "cover", zIndex: 0 }}>
+          <video autoPlay loop muted style={{  height: '100%', width: "100%", objectFit: "cover", zIndex: 0 }}>
             <source src="/react41.mp4" type="video/mp4" />
           </video>
 
@@ -20,12 +20,12 @@ const Firstcontainer = ({ Heightsize }) => {
             width: "60%",
             fontWeight:"700",
             fontSize:"3.5rem",
-            lineHeight: 1.2,
+            lineHeight: 1.1,
           }}
 
           >
             Activating humanity's potential through generative AI
-            <Typography sx={{mt:"30px", width: "50%", fontSize:"1.9rem", fontWeight:"500"}}>
+            <Typography sx={{mt:"30px", width: "50%", fontSize:"1.9rem", fontWeight:"500", lineHeight: 1,}}>
               Open models in every modality,
               for everyone, everywhere.
             </Typography>

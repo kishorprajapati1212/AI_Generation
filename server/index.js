@@ -9,12 +9,6 @@ const payment = require("./Routes/Payment");
 const image = require("./Routes/Imagedat");
 
 const app = express();
-
-// Define the allowed origins for CORS
-const allowedOrigins = [
-  'https://regal-sunshine-279c0c.netlify.app'
-];
-
 // Middleware to handle CORS
 app.use(cors());
 

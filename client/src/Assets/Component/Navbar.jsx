@@ -62,7 +62,7 @@ const Navbar = () => {
 
   return (
     <Box sx={{flexGrow: 1 }}>
-      <AppBar  position='static' sx={{  background: 'linear-gradient(135deg, rgba(48,48,48, 0.9), rgba(48,48,48, 0.7))',  padding:'0 20px' }}>
+      <AppBar  position='static' sx={{ justifyContent:"center" ,background: 'linear-gradient(135deg, rgba(48,48,48, 0.9), rgba(48,48,48, 0.7))',  padding:'0 20px' }}>
         {/* <Link to="/Test">Hello</Link> */}
         <Toolbar>
           {userData ?
@@ -71,7 +71,7 @@ const Navbar = () => {
             </IconButton> : ""}
 
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            <img src="/vite.svg" alt="LOGO" style={{ marginTop: '10px' }} />
+            <img src="/vite.svg" alt="LOGO" style={{ marginTop: '0' }} />
           </Typography>
 
           <IconButton variant="h6" sx={{ cursor: "pointer", fontSize: "40px", color: Theme.white[100] }} component={Link} to="/home">

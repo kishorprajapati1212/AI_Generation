@@ -12,17 +12,23 @@ router.post("/checkout", async(req, res) => {
             payment_method_types: ['card'],
             line_items: [{
                 price_data: {
-                    currency: 'usd',
+                    currency: 'inr',
                     product_data: {
                         name: 'Sample Item',
                     },
-                    unit_amount: amount    , // Convert rupees to paise (Stripe uses the smallest currency unit)
-                },
+                    unit_amount: amount * 100, // Convert rupees to paise (Stripe uses the smallest currency unit)
+                }, 
                 quantity: 1,
             }],
             mode: 'payment',
             success_url: 'http://localhost:3002/profile/home', // Redirect to this URL after successful payment
             cancel_url: 'http://localhost:3002/profile/bill',
+            billing_address_collection: 'required', // Collect billing address
+            shipping_address_collection: { allowed_countries: ['IN'] }, // Restrict shipping to India
+            metadata: {
+                customerName: "Jhon Dev", // Add customer's name
+                customerAddress: "1234", // Add customer's address
+            },
         });
 
         const payment = new Payment({
