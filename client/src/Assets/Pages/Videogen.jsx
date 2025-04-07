@@ -19,10 +19,10 @@ const Videogen = () => {
 
     // State object for slider values
     const [sliderValues, setSliderValues] = useState({
-        seed:0,
+        seed: 0,
         cfg_scale: 1,
-        motion_bucket_id:1,
-        num_frames:1,
+        motion_bucket_id: 1,
+        num_frames: 1,
     });
 
     const sliderLimits = {
@@ -82,7 +82,7 @@ const Videogen = () => {
     const handleSubmit = async (e) => {
         let apiKey = GlobleVariable.getCurrentApiKey();
         if (e) e.preventDefault();
-        if(!inputFile){ return }
+        if (!inputFile) { return }
 
         setLoading(true);
         setErrorMessage('');
@@ -128,6 +128,9 @@ const Videogen = () => {
         } catch (error) {
             GlobleVariable.switchApiKey();
             await handleSubmit(e);
+            // setErrorMessage(`Error: ${error.message || 'Unknown error occurred.'}`);
+            // setLoading(false);
+        } finally {
             setErrorMessage(`Error: ${error.message || 'Unknown error occurred.'}`);
             setLoading(false);
         }
@@ -186,7 +189,7 @@ const Videogen = () => {
                     gap: 1,
                     overflow: "hidden"
                 }}>
-                    <Video_Input_Section 
+                    <Video_Input_Section
                         handleChange={handleChange}
                         handleSubmit={handleSubmit}
                         errorMessage={errorMessage}

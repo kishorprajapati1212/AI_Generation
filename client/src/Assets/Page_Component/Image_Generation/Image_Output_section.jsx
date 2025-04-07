@@ -4,7 +4,7 @@ import Rive from '@rive-app/react-canvas';
 
 const Image_Output_section = ({ loading, imageUrl, handleDownload }) => {
     const [animation, setAnimation] = useState("Walking");
-    const [isTransitioning, setIsTransitioning] = useState(false); 
+    const [isTransitioning, setIsTransitioning] = useState(false);
 
     useEffect(() => {
         const animationCycle = async () => {
@@ -54,12 +54,12 @@ const Image_Output_section = ({ loading, imageUrl, handleDownload }) => {
         <>
             {loading ? (
                 <Box width="500px" height="450px"
-                    style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',backgroundColor:"gray", borderRadius: "10px" }}
+                    style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: "gray", borderRadius: "10px" }}
                 >
-                    <Rive 
+                    <Rive
                         src="/Rive_Folder/the_walking___working_dead.riv"
                         animations={animation} // Dynamically set the animation
-                        sx={{backgroundColor:"red", width:"100%", height:"100%"}}
+                        sx={{ backgroundColor: "red", width: "100%", height: "100%" }}
                     />
                 </Box>
             ) : imageUrl ? (
@@ -70,7 +70,14 @@ const Image_Output_section = ({ loading, imageUrl, handleDownload }) => {
                         style={{ width: "500px", height: "500px", borderRadius: "8px" }}
                     />
                     <br />
-                    <button onClick={handleDownload} style={{ marginTop: "10px", background: "blue" }}>
+                    <button onClick={handleDownload} style={{
+                        marginTop: "10px", backgroundColor: "#71a3c1",
+                        color: "white",
+                        fontWeight: 'bold',
+                        "&:hover": { backgroundColor: "#0D0D0D" },
+                        padding: '10px 20px',
+                        borderRadius: '8px',
+                    }}>
                         Download Image
                     </button>
                 </div>
