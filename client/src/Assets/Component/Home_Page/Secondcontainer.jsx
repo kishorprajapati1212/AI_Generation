@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
 
 
-const Secondcontainer = ({ Header, Header_summary, Header_url, Direaction, Header_Button_text }) => {
+const Secondcontainer = ({ Header, Header_summary, Header_url, Direaction, Header_Button_text, Header_Image_src }) => {
   const { ref, inView } = useInView({
     threshold: 0.1,
     triggerOnce: false,
@@ -33,7 +33,7 @@ const Secondcontainer = ({ Header, Header_summary, Header_url, Direaction, Heade
       {/* Image */}
       <Box
         component="img"
-        src="/model/Aimg1.jpg"
+        src={Header_Image_src}
         alt="Image 1"
         sx={{
           // border:"10px solid black",

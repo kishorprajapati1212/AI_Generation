@@ -155,6 +155,7 @@ const Videohistroy = () => {
                                         ))
                                     ) : (
                                         <Typography variant="body1" style={{ textAlign: 'center' }}>
+                                            <br></br>
                                             No available videos to display.
                                         </Typography>
                                     )}

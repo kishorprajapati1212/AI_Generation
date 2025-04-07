@@ -14,7 +14,7 @@ const Imagegen = () => {
   const [imageUrl, setImageUrl] = useState("");
   const [error, setError] = useState("");
   const userdata = getuser();
-
+ 
   const handleChange = (e) => {
     setPrompt(e.target.value);
   };

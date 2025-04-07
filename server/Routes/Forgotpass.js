@@ -1,7 +1,10 @@
 const express = require("express")
+require('dotenv').config();
+
 const forgotpassmodel = require("../Model/Forgotpassmodel");
 const signmodel = require("../Model/signmodel")
 const nodemailer = require('nodemailer');
+
 
 const router = express.Router()
 
@@ -33,14 +36,14 @@ router.post("/sendmail", async (req, res) => {
         let transporter = nodemailer.createTransport({
             service: 'Gmail',
             auth: {
-                user: 'kjhgfdsa1014@gmail.com', // Your Gmail email address
-                pass: 'lczr felm afkq dwuw' // Your Gmail password or App Password
+                user: process.env.EMAIL_USER,
+                pass: process.env.EMAIL_PASS
             }
         });
 
         // Define email options
         let mailOptions = {
-            from: 'kjhgfdsa1014@gmail.com', // Sender email address
+            from: "kjhgfdsa1014@gmail.com", // Sender email address
             to: email, // Recipient email address
             subject: "Forgot Password OTP", // Subject line
             html: `
@@ -99,7 +102,7 @@ router.post("/codecheck", async (req, res) => {
 router.post("/updatepass", async (req, res) => {
     console.log("Update Password Request Received"); // Log the request
     const { newPassword, email } = req.body;
-    
+
     try {
         const user = await signmodel.findOneAndUpdate(
             { email },

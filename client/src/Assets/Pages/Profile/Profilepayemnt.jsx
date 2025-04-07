@@ -4,7 +4,8 @@ import { loadStripe } from "@stripe/stripe-js"
 import axios from 'axios'
 import { getuser } from '../../Component/Navbar'
 import Sidebar from '../../Component/Profilesidebar'
-import Theme,{ GlobleVariable } from "../../../Theme"
+import Theme, { GlobleVariable } from "../../../Theme"
+import PaymentHistory from './PaymentHistory'
 
 const Profilepayemnt = () => {
     const [ruppe, setruppe] = useState("1")
@@ -56,53 +57,55 @@ const Profilepayemnt = () => {
 
     return (
         <div style={{ margin: "20px" }}>
-        <Grid container spacing={2}>
-            {/* Sidebar */}
-           
+            <Grid container spacing={2}>
+                {/* Sidebar */}
+
                 <Sidebar /> {/* Use the Sidebar component here */}
-            
-            <Grid item xs={12} sm={9}>
-                <Typography variant='h4' style={{ fontFamily: 'Georgia, serif', textAlign: "Center", color:Theme.white[100] }}>
-                    BILLING
-                </Typography>
-                <Paper style={{ padding: '20px', backgroundColor:Theme.primary[10], color:Theme.white[100] }}>
-                    <form onSubmit={handlePayment}>
-                        <Grid container spacing={2} >
-                            <Grid item xs={12} sm={6} md={4}>
-                                <TextField
-                                    label="Enter your Amount Here"
-                                    variant="outlined"
-                                    fullWidth
-                                    value={ruppe}
-                                    onChange={handleRupeesChange}
-                                    inputMode="numeric"  // Allow only numeric input
-                                    pattern="[0-9]*"  // Only allow digits
-                                    InputProps={{ style:{color:Theme.white[100], backgroundColor:Theme.primary[100]} }}
-                                    InputLabelProps={{ style:{color:Theme.white[100]} }}
-                                />
 
-                                {credit !== 0 ? (  // Render credit if it's not equal to 0
-                                    <Typography variant="subtitle1" style={{ marginTop: '10px' }}>
-                                        Credits: {credit}
-                                    </Typography>
-                                ) : (
-                                    <Typography variant="subtitle1" style={{ marginTop: '10px' }}>
-                                        Credits: 0
-                                    </Typography>
-                                )}
-                            </Grid>
+                <Grid item xs={12} sm={9}>
+                    <Typography variant='h4' style={{ fontFamily: 'Georgia, serif', textAlign: "Center", color: Theme.white[100] }}>
+                        BILLING
+                    </Typography>
+                    <Paper style={{ padding: '20px', backgroundColor: Theme.primary[10], color: Theme.white[100] }}>
+                        <form onSubmit={handlePayment}>
+                            <Grid container spacing={2} >
+                                <Grid item xs={12} sm={6} md={4}>
+                                    <TextField
+                                        label="Enter your Amount Here"
+                                        variant="outlined"
+                                        fullWidth
+                                        value={ruppe}
+                                        onChange={handleRupeesChange}
+                                        inputMode="numeric"  // Allow only numeric input
+                                        pattern="[0-9]*"  // Only allow digits
+                                        InputProps={{ style: { color: Theme.white[100], backgroundColor: Theme.primary[100] } }}
+                                        InputLabelProps={{ style: { color: Theme.white[100] } }}
+                                    />
 
-                            <Grid item xs={12} sm={6} md={8} style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                                <Button variant="contained" color="primary" type="submit" style={{ marginTop: '10px', maxHeight:"50px", width:"auto" }}>
-                                    Pay via Stripe
-                                </Button>
+                                    {credit !== 0 ? (  // Render credit if it's not equal to 0
+                                        <Typography variant="subtitle1" style={{ marginTop: '10px' }}>
+                                            Credits: {credit}
+                                        </Typography>
+                                    ) : (
+                                        <Typography variant="subtitle1" style={{ marginTop: '10px' }}>
+                                            Credits: 0
+                                        </Typography>
+                                    )}
+                                </Grid>
+
+                                <Grid item xs={12} sm={6} md={8} style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                                    <Button variant="contained" color="primary" type="submit" style={{ marginTop: '10px', maxHeight: "50px", width: "auto" }}>
+                                        Pay via Stripe
+                                    </Button>
+                                </Grid>
                             </Grid>
-                        </Grid>
-                    </form>
-                </Paper>
+                        </form>
+                        <PaymentHistory userid={userid}/>
+
+                    </Paper>
+                </Grid>
             </Grid>
-        </Grid>
-    </div>
+        </div>
     )
 }
 

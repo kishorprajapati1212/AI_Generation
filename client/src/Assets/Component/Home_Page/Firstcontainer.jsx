@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Grid, Typography } from '@mui/material';
 
-const Firstcontainer = ({ Heightsize }) => {
+const Firstcontainer = () => {
   return (
     <Box sx={{ color: "white", position: "relative", height: '90vh', overflow: 'hidden' }}>
       <Grid container>
@@ -18,13 +18,16 @@ const Firstcontainer = ({ Heightsize }) => {
             color: 'white',
             zIndex: 2,
             width: "60%",
-            fontWeight:"700",
+            fontWeight:"500",
             fontSize:"3.5rem",
             lineHeight: 1.1,
           }}
 
           >
-            Activating humanity's potential through generative AI
+            Activating humanity's potential through <span style={{color:"yellow", fontWeight: 600, fontStyle:"𝒽𝒾𝑔𝒽𝓁𝒾𝑔𝒽𝓉𝓈",}}>
+            𝐆𝖾𐓣𝖾𝗋α𝗍𝗂𝗏𝖾 𝐀𝚰
+
+            </span>
             <Typography sx={{mt:"30px", width: "50%", fontSize:"1.9rem", fontWeight:"500", lineHeight: 1,}}>
               Open models in every modality,
               for everyone, everywhere.

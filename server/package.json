@@ -3,6 +3,7 @@
     "@stripe/stripe-js": "^3.3.0",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
     "express": "^4.19.2",
     "mongodb": "^6.5.0",
     "mongoose": "^8.5.3",

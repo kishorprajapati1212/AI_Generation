@@ -31,6 +31,7 @@ const Imgside = () => {
   return (
     <Box
       sx={{
+        position:"relative",
         width: { xs: "15%", sm: "10%", md: "5%" }, // Responsive width
         backgroundColor: `${Theme.primary[50]}`,
         color: "#fff",

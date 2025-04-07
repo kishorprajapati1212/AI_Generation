@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+require("dotenv").config();
 
 const signroute = require("./Routes/Sign");
 const userdata = require("./Routes/Userdata");
@@ -17,7 +18,7 @@ app.use(express.json({ limit: '1000mb' }));
 app.use(express.urlencoded({ limit: '1000mb', extended: true }));
 
 // MongoDB connection setup
-mongoose.connect('mongodb+srv://one1010piece1111:LSkd8pbeNd7rY1n9@cluster1.wgfrk.mongodb.net/commondb?retryWrites=true&w=majority&appName=Cluster1', {
+mongoose.connect(process.env.DB_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
@@ -36,6 +37,7 @@ app.use(payment);
 app.use(image);
 
 // Start the server on port 5000
-app.listen(5000, () => {
-  console.log("Server running on port 5000");
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log("Server running on port "+PORT);
 });

@@ -74,7 +74,7 @@ const Imagehistory = () => {
                                         {item.image ? (
                                             <Box sx={{
                                                 marginTop: "20px",
-                                                position: "relative", height: "55vh", backgroundColor: "grey", cursor: "pointer", '&:hover': {
+                                                position: "relative", height: "52.2vh", backgroundColor: "grey", cursor: "pointer", '&:hover': {
                                                     backgroundColor: "#69369E",
                                                 },
                                             }}>

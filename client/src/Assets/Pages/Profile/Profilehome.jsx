@@ -36,6 +36,7 @@ const Profilehome = () => {
                         <Grid container spacing={2} justifyContent="center" alignItems="center" >
                             <Grid item xs={12} md={3} style={{ textAlign: 'center' }} >
                                 <AccountCircleIcon sx={{ height: "200px", width: "auto", color: "grey" }} />
+                                {/* <img src="https://avatars.githubusercontent.com/u/144512766?s=400&v=4" sx={{ height: "200px", width: "auto", color: "grey", borderRadius:"50%" }}/> */}
                             </Grid>
                             <Grid item xs={12} md={9} >
                                 <Grid container spacing={2} sx={{ml:"2%"}}>

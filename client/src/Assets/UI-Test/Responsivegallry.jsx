@@ -12,7 +12,7 @@ const ResponsiveGallery = () => {
         '/model/Designer (8).jpeg',
         '/model/Designer (9).jpeg',
         '/model/Designer (10).jpeg',
-        '/model/Designer (11).jpeg',
+        // '/model/Designer (11).jpeg',
     ];
 
     // Helper function to divide images into columns
@@ -33,12 +33,12 @@ const ResponsiveGallery = () => {
         <Box
           sx={{
             display: 'flex',
-            justifyContent: 'center',  // Center the columns in the middle of the page
-            gap: 2,                    // Gap between columns
-            maxWidth: '1200px',         // Limit the overall width of the gallery
-            margin: '100px auto',           // Center the gallery container
+            justifyContent: 'center',  
+            gap: 2,                    
+            maxWidth: '1200px',        
+            margin: '100px auto',          
             padding: '16px',
-            '&:hover img:not(:hover)': {  // When hovering on any image, blur and grayscale others
+            '&:hover img:not(:hover)': {  
               filter: 'blur(3px) grayscale(100%)',
               transition: 'filter 0.3s ease',
             },
