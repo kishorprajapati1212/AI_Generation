@@ -3,6 +3,12 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
 
+const cluster = require("cluster")
+const os = require("os")
+
+const totalcpu  = os.cpus().length
+console.log("Toatal cpu: "+ totalcpu + "\n")
+
 const signroute = require("./Routes/Sign");
 const userdata = require("./Routes/Userdata");
 const forgotpass = require("./Routes/Forgotpass");
