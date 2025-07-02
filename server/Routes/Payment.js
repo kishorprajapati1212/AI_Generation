@@ -64,7 +64,6 @@ router.post("/checkout", async (req, res) => {
 router.get("/payment/history/:userid", async (req, res) => {
     const { userid } = req.params;
     try {
-        console.log(userid);
         const paymentHistory = await Payment.find({ userid });
 
         return res.status(200).json({ mtype: "success", message: "Successfully found", getuser: paymentHistory });
